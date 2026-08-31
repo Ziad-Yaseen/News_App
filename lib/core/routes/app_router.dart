@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news_app/core/routes/route_names.dart';
-import 'package:news_app/features/home/home.dart';
+import 'package:news_app/features/home/screens/home.dart';
 
 class AppRouter {
   static final GoRouter router = GoRouter(
