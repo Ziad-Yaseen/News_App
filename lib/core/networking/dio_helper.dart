@@ -8,13 +8,15 @@ class DioHelper {
   static void initDio() {
     dio ??= Dio(
       BaseOptions(
-        baseUrl: ApiEndpoints.baseUrl,
-        receiveDataWhenStatusError: true,
-      ),
+  baseUrl: ApiEndpoints.baseUrl,
+  receiveDataWhenStatusError: true,
+  connectTimeout: const Duration(seconds: 10),
+  receiveTimeout: const Duration(seconds: 10),
+)
     );
   }
 
-  Future<Response<dynamic>> getRequest({
+  static Future<Response<dynamic>> getRequest({
     required String endPoint,
     required Map<String, dynamic> queryParameters,
   }) async {
