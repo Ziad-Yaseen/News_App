@@ -62,3 +62,5 @@ build/web/
 
 # macOS related (Desktop)
 /macos/
+
+lib/core/networking/api_infos.dart
