@@ -6,8 +6,6 @@ import 'package:news_app/core/constants/app_icons.dart';
 import 'package:news_app/core/constants/app_sizes.dart';
 import 'package:news_app/core/styles/text_styles.dart';
 import 'package:news_app/features/home/widgets/categories_list_view.dart';
-import 'package:news_app/features/home/widgets/news_tile.dart';
-import 'package:news_app/features/home/widgets/top_headline_item.dart';
 
 class Home extends StatelessWidget {
   const new({super.key});

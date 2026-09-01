@@ -5,5 +5,6 @@
     "business" : "أعمال",
     "entertainment" : "ترفيه",
     "cancel" : "اغلاق",
-    "search_results" : "نتائج البحث"
+    "search_results" : "نتائج البحث",
+    "server_error" : "حدث خطأ في الاتصال بالخادم"
 }
