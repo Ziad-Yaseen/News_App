@@ -10,7 +10,7 @@ class ArticleModel {
   final String content;
   final SourceModel source;
 
-  new({
+  ArticleModel({
     required this.author,
     required this.title,
     required this.description,

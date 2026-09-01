@@ -11,42 +11,39 @@ class NewsTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppSizes.p32),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  article.title,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: AppTextStyles.title.copyWith(
-                    fontSize: AppSizes.fontSize18,
-                  ),
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                article.title,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: AppTextStyles.title.copyWith(
+                  fontSize: AppSizes.fontSize18,
                 ),
-                Gap(AppSizes.height4),
-                Text(
-                  '${article.author} · ${article.publishedAt}',
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: AppTextStyles.subtitle,
-                ),
-              ],
-            ),
+              ),
+              Gap(AppSizes.height4),
+              Text(
+                '${article.author} · ${article.publishedAt}',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: AppTextStyles.subtitle,
+              ),
+            ],
           ),
-          Gap(AppSizes.width16),
-
-          CustomMainImage(
-            image: article.image,
-            height: AppSizes.height80,
-            width: AppSizes.width112,
-          ),
-        ],
-      ),
+        ),
+        Gap(AppSizes.width16),
+    
+        CustomMainImage(
+          image: article.image,
+          height: AppSizes.height80,
+          width: AppSizes.width112,
+        ),
+      ],
     );
   }
 }
