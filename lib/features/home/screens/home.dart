@@ -5,6 +5,7 @@ import 'package:news_app/core/constants/app_colors.dart';
 import 'package:news_app/core/constants/app_icons.dart';
 import 'package:news_app/core/constants/app_sizes.dart';
 import 'package:news_app/core/styles/text_styles.dart';
+import 'package:news_app/features/home/widgets/categories_list_view.dart';
 
 class Home extends StatelessWidget {
   const new({super.key});
@@ -27,12 +28,17 @@ class Home extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(child: Column(
-        mainAxisAlignment: .center,
-        children: [
-          Gap(AppSizes.height16)
-        ],
-      )),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: .center,
+          children: [
+            Gap(AppSizes.height16),
+            const CategoriesListView(),
+            Gap(AppSizes.height24),
+            Expanded(child: ListView()),
+          ],
+        ),
+      ),
     );
   }
 }
