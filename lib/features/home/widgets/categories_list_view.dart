@@ -5,7 +5,14 @@ import 'package:news_app/core/models/category_model.dart';
 import 'package:news_app/features/home/widgets/category_card.dart';
 
 class CategoriesListView extends StatelessWidget {
-  const CategoriesListView({super.key});
+  const CategoriesListView({
+    super.key, 
+    this.selectedCategoryId, 
+    required this.onCategorySelected,
+  });
+
+  final String? selectedCategoryId;
+  final Function(String) onCategorySelected;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +25,7 @@ class CategoriesListView extends StatelessWidget {
       CategoryModel(name: 'Sports', id: 'sports'),
       CategoryModel(name: 'Technology', id: 'technology'),
     ];
+    
     return SizedBox(
       height: AppSizes.height32,
       child: ListView.separated(
@@ -28,7 +36,12 @@ class CategoriesListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
         itemBuilder: (context, index) {
-          return CategoryCard(category: categories[index]);
+          final category = categories[index];
+          return CategoryCard(
+            category: category,
+            isSelected: category.id == selectedCategoryId,
+            onTap: () => onCategorySelected(category.id),
+          );
         },
         separatorBuilder: (context, index) => Gap(AppSizes.width12),
       ),

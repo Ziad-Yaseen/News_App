@@ -5,12 +5,11 @@ class HomeRepository {
   final HomeServices homeServices;
   HomeRepository(this.homeServices);
 
-  Future<List<ArticleModel>> fetchTopHeadlines() async {
+  Future<List<ArticleModel>> fetchTopHeadlines({String? category}) async {
     try {
-      final data = await homeServices.getTopHeadlines();
-
+      final data = await homeServices.getTopHeadlines(category: category);
       List articlesList = data['articles'] ?? [];
-
+      
       return articlesList
           .map((article) => ArticleModel.fromJson(article))
           .toList();

@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:news_app/core/models/article_model.dart';
 import 'package:news_app/core/repositories/home_repository.dart';
 import 'package:news_app/core/services/home_services.dart';
+import 'package:news_app/features/home/widgets/news_list_view.dart';
+// تأكد من استدعاء NewsListView هنا
 
 class NewsListViewBuilder extends StatefulWidget {
-  const NewsListViewBuilder({super.key, this.category = 'general'});
+  const NewsListViewBuilder({super.key, this.category}); 
 
-  final String category;
+  final String? category;
 
   @override
   State<NewsListViewBuilder> createState() => _NewsListViewBuilderState();
@@ -17,19 +19,25 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
 
   @override
   void initState() {
-    _newsFuture = HomeRepository(HomeServices()).fetchTopHeadlines();
     super.initState();
+    _loadData();
+  }
+
+  void _loadData() {
+    _newsFuture = HomeRepository(HomeServices()).fetchTopHeadlines(
+      category: widget.category,
+    );
   }
 
   void _fetchNews() {
     setState(() {
-      _newsFuture = NewsService().getTopHeadlines(category: widget.category);
+      _loadData();
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
+    return FutureBuilder<List<ArticleModel>>(
       future: _newsFuture,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
@@ -43,7 +51,7 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
             hasScrollBody: false,
             child: Center(
               child: Column(
-                mainAxisAlignment: .center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
                     isNetworkError ? Icons.wifi_off : Icons.error_outline,
@@ -84,13 +92,12 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
             hasScrollBody: false,
             child: Center(
               child: Column(
-                mainAxisAlignment: .center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const CircularProgressIndicator(
                     color: Colors.blue,
                     strokeWidth: 4.0,
                   ),
-
                   const SizedBox(height: 20),
                   Text(
                     'Loading...',

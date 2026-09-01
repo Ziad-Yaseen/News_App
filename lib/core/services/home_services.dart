@@ -9,7 +9,7 @@ class HomeServices {
         'apiKey': ApiInfos.apiKey,
         'country': 'us',
       };
-      
+
       if (category != null) {
         queryParams['category'] = category;
       }
