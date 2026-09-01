@@ -8,11 +8,11 @@ class DioHelper {
   static void initDio() {
     dio ??= Dio(
       BaseOptions(
-  baseUrl: ApiEndpoints.baseUrl,
-  receiveDataWhenStatusError: true,
-  connectTimeout: const Duration(seconds: 10),
-  receiveTimeout: const Duration(seconds: 10),
-)
+        baseUrl: ApiEndpoints.baseUrl,
+        receiveDataWhenStatusError: true,
+        connectTimeout: const Duration(seconds: 10),
+        receiveTimeout: const Duration(seconds: 10),
+      ),
     );
   }
 
