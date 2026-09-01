@@ -37,11 +37,11 @@ class NewsTile extends StatelessWidget {
           ),
         ),
         Gap(AppSizes.width16),
-    
+
         CustomMainImage(
           image: article.image,
           height: AppSizes.height80,
-          width: AppSizes.width112,
+          width: AppSizes.width120,
         ),
       ],
     );

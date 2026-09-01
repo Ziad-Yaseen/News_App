@@ -23,9 +23,8 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
   }
 
   void _loadData() {
-    _newsFuture = HomeRepository(HomeServices()).fetchTopHeadlines(
-      category: widget.category,
-    );
+    _newsFuture = HomeRepository(HomeServices())
+        .fetchTopHeadlines(category: widget.category);
   }
 
   void _fetchNews() {
@@ -114,7 +113,12 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
             ),
           );
         }
-        return CustomScrollView(slivers: [sliverContent]);
+        return CustomScrollView(
+          physics: const BouncingScrollPhysics(
+            parent: AlwaysScrollableScrollPhysics(),
+          ),
+          slivers: [sliverContent],
+        );
       },
     );
   }

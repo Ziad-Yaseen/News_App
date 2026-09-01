@@ -16,6 +16,7 @@ class AppSizes {
   static double width16 = 16.0.w;
   static double width12 = 12.0.w;
   static double width112 = 112.0.w;
+  static double width120 = 120.0.w;
 
   // heights
   static double height4 = 4.0.h;
