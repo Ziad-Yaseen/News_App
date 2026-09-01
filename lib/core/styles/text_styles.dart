@@ -10,9 +10,9 @@ class AppTextStyles {
     color: AppColors.primaryTextColor,
   );
 
-  static TextStyle category = GoogleFonts.inter(
-    fontSize: AppSizes.fontSize14,
-    fontWeight: FontWeight.w600,
-    color: AppColors.primaryTextColor,
+  static TextStyle subtitle = GoogleFonts.inter(
+    fontSize: AppSizes.fontSize12,
+    fontWeight: FontWeight.w400,
+    color: AppColors.secondaryTextColor,
   );
 }

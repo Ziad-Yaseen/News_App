@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/core/constants/app_colors.dart';
 import 'package:news_app/core/constants/app_sizes.dart';
 import 'package:news_app/core/models/category_model.dart';
 import 'package:news_app/core/styles/container_styles.dart';
@@ -10,7 +11,12 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
+      borderRadius: BorderRadius.circular(AppSizes.radius58),
+      overlayColor: WidgetStatePropertyAll(
+        AppColors.lightBlue.withValues(alpha: 0.6),
+      ),
+      onTap: () {},
       // onTap: () => context.pushNamed(
       //   RouteNames.category,
       // extra: {
@@ -23,7 +29,10 @@ class CategoryCard extends StatelessWidget {
         height: AppSizes.height32,
         alignment: Alignment.center,
         decoration: ContainerStyles.isNotSelected,
-        child: Text(category.name, style: AppTextStyles.category),
+        child: Text(
+          category.name,
+          style: AppTextStyles.title.copyWith(fontSize: AppSizes.fontSize14),
+        ),
       ),
     );
   }
