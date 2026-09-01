@@ -3,10 +3,9 @@ import 'package:news_app/core/models/article_model.dart';
 import 'package:news_app/core/repositories/home_repository.dart';
 import 'package:news_app/core/services/home_services.dart';
 import 'package:news_app/features/home/widgets/news_list_view.dart';
-// تأكد من استدعاء NewsListView هنا
 
 class NewsListViewBuilder extends StatefulWidget {
-  const NewsListViewBuilder({super.key, this.category}); 
+  const NewsListViewBuilder({super.key, this.category});
 
   final String? category;
 
@@ -40,14 +39,16 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
     return FutureBuilder<List<ArticleModel>>(
       future: _newsFuture,
       builder: (context, snapshot) {
+        Widget sliverContent;
+
         if (snapshot.hasData) {
-          return NewsListView(articles: snapshot.data!);
+          sliverContent = NewsListView(articles: snapshot.data!);
         } else if (snapshot.hasError) {
           final errorMessage = snapshot.error.toString().toLowerCase();
           final isNetworkError =
               errorMessage.contains('socket') ||
               errorMessage.contains('network');
-          return SliverFillRemaining(
+          sliverContent = SliverFillRemaining(
             hasScrollBody: false,
             child: Center(
               child: Column(
@@ -88,7 +89,7 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
             ),
           );
         } else {
-          return SliverFillRemaining(
+          sliverContent = SliverFillRemaining(
             hasScrollBody: false,
             child: Center(
               child: Column(
@@ -113,6 +114,7 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
             ),
           );
         }
+        return CustomScrollView(slivers: [sliverContent]);
       },
     );
   }
