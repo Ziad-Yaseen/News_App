@@ -7,12 +7,12 @@ import 'package:news_app/core/styles/text_styles.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
-    super.key, 
+    super.key,
     required this.category,
     required this.isSelected,
     required this.onTap,
   });
-  
+
   final CategoryModel category;
   final bool isSelected;
   final VoidCallback onTap;
@@ -29,14 +29,12 @@ class CategoryCard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: AppSizes.p24),
         height: AppSizes.height32,
         alignment: Alignment.center,
-        decoration: isSelected 
-            ? ContainerStyles.isSelected 
+        decoration: isSelected
+            ? ContainerStyles.isSelected
             : ContainerStyles.isNotSelected,
         child: Text(
           category.name,
-          style: AppTextStyles.title.copyWith(
-            fontSize: AppSizes.fontSize14,
-          ),
+          style: AppTextStyles.title.copyWith(fontSize: AppSizes.fontSize14),
         ),
       ),
     );

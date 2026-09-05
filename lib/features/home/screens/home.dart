@@ -6,6 +6,7 @@ import 'package:news_app/core/constants/app_icons.dart';
 import 'package:news_app/core/constants/app_sizes.dart';
 import 'package:news_app/core/styles/text_styles.dart';
 import 'package:news_app/features/home/widgets/categories_list_view.dart';
+import 'package:news_app/features/home/widgets/home_app_bar.dart';
 import 'package:news_app/features/home/widgets/news_list_view_builder.dart';
 
 class Home extends StatefulWidget {
@@ -21,21 +22,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.lightBlue,
-        toolbarHeight: AppSizes.height120,
-        title: Text('explore'.tr(), style: AppTextStyles.title),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              AppIcons.search,
-              color: AppColors.primaryTextColor,
-              size: AppSizes.fontSize32,
-            ),
-          ),
-        ],
-      ),
+      appBar: HomeAppBar(),
       body: Column(
         children: [
           Gap(AppSizes.height16),

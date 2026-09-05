@@ -6,5 +6,9 @@
     "entertainment" : "Entertainment",
     "cancel" : "Cancel",
     "search_results" : "Search results",
-    "server_error" : "Server connection error"
+    "server_error" : "Server connection error",
+    "no_internet" : "No Internet Connection\nPlease check your network",
+    "oops_error" : "OOPS...\nThere was an error, try again later",
+    "try_again" : "Try Again",
+    "loading" : "Loading..."
 }

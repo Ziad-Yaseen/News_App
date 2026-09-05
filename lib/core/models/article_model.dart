@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:news_app/core/models/source_model.dart';
 
 class ArticleModel {
@@ -21,14 +22,24 @@ class ArticleModel {
     required this.source,
   });
 
-  factory ArticleModel.fromJson(Map<String, dynamic> json) => ArticleModel(
-    author: json['author'] ?? 'Unknown Author',
-    title: json['title'] ?? 'No title available',
-    description: json['description'] ?? 'No description available',
-    url: json['url'] ?? 'No URL available',
-    image: json['urlToImage'] ?? '',
-    publishedAt: json['publishedAt'] ?? 'No publish date available',
-    content: json['content'] ?? 'No content available',
-    source: SourceModel.fromJson(json['source'] ?? {}),
-  );
+  factory ArticleModel.fromJson(Map<String, dynamic> json) {
+    String formattedDate = '';
+    final parsedDate = DateTime.tryParse(json['publishedAt'] ?? '');
+
+    if (parsedDate != null) {
+      formattedDate = DateFormat('yyyy-MM-dd HH:mm')
+          .format(parsedDate.toLocal());
+    }
+
+    return ArticleModel(
+      author: json['author'] ?? 'Unknown Author',
+      title: json['title'] ?? 'No title available',
+      description: json['description'] ?? 'No description available',
+      url: json['url'] ?? 'No URL available',
+      image: json['urlToImage'] ?? '',
+      publishedAt: formattedDate,
+      content: json['content'] ?? 'No content available',
+      source: SourceModel.fromJson(json['source'] ?? {}),
+    );
+  }
 }

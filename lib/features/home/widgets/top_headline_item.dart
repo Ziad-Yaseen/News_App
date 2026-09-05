@@ -6,13 +6,13 @@ import 'package:news_app/core/models/article_model.dart';
 import 'package:news_app/core/styles/text_styles.dart';
 
 class TopHeadlineItem extends StatelessWidget {
-  const TopHeadlineItem({super.key, required this.article}); 
+  const TopHeadlineItem({super.key, required this.article});
   final ArticleModel article;
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start, 
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomMainImage(
           image: article.image,
@@ -24,9 +24,7 @@ class TopHeadlineItem extends StatelessWidget {
           article.title,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
-          style: AppTextStyles.title.copyWith(
-            fontSize: AppSizes.fontSize18,
-          ),
+          style: AppTextStyles.title.copyWith(fontSize: AppSizes.fontSize18),
         ),
         Gap(AppSizes.height8),
         Text(

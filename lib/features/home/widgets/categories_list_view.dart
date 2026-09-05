@@ -6,8 +6,8 @@ import 'package:news_app/features/home/widgets/category_card.dart';
 
 class CategoriesListView extends StatelessWidget {
   const CategoriesListView({
-    super.key, 
-    this.selectedCategoryId, 
+    super.key,
+    this.selectedCategoryId,
     required this.onCategorySelected,
   });
 
@@ -25,7 +25,7 @@ class CategoriesListView extends StatelessWidget {
       CategoryModel(name: 'Sports', id: 'sports'),
       CategoryModel(name: 'Technology', id: 'technology'),
     ];
-    
+
     return SizedBox(
       height: AppSizes.height32,
       child: ListView.separated(
