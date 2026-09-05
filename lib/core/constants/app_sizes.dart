@@ -35,7 +35,9 @@ class AppSizes {
   static double fontSize12 = 12.0.sp;
   static double fontSize14 = 14.0.sp;
   static double fontSize16 = 16.0.sp;
+  static double fontSize17 = 17.0.sp;
   static double fontSize18 = 18.0.sp;
+  static double fontSize20 = 20.0.sp;
   static double fontSize32 = 32.0.sp;
   static double fontSize60 = 60.0.sp;
 }

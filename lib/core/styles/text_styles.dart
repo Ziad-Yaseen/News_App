@@ -15,4 +15,10 @@ class AppTextStyles {
     fontWeight: FontWeight.w400,
     color: AppColors.secondaryTextColor,
   );
+
+  static TextStyle cancel = GoogleFonts.inter(
+    fontSize: AppSizes.fontSize14,
+    fontWeight: FontWeight.w500,
+    color: AppColors.blueCancel,
+  );
 }
