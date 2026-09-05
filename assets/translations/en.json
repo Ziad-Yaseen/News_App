@@ -10,5 +10,8 @@
     "no_internet" : "No Internet Connection\nPlease check your network",
     "oops_error" : "OOPS...\nThere was an error, try again later",
     "try_again" : "Try Again",
-    "loading" : "Loading..."
+    "loading" : "Loading...",
+    "no_url_available" : "No URL available",
+    "open_article_error" : "An error occurred while trying to open the article.",
+    "invalid_link" : "Sorry, this link is invalid or unavailable."
 }

@@ -29,6 +29,8 @@ class AppSizes {
   static double height80 = 80.0.h;
   static double height120 = 120.0.h;
   static double height206 = 206.0.h;
+  static double height271 = 271.0.h;
+  static double height316 = 316.0.h;
 
   // Font Sizes
   static double fontSize2 = 2.0.sp;

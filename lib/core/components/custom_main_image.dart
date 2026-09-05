@@ -10,16 +10,18 @@ class CustomMainImage extends StatelessWidget {
     required this.image,
     required this.height,
     required this.width,
+    required this.radius,
   });
 
   final String image;
   final double height;
   final double width;
+  final double radius;
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(AppSizes.radius12),
+      borderRadius: BorderRadius.circular(radius),
       child: CachedNetworkImage(
         imageUrl: image,
         width: width,
@@ -28,9 +30,9 @@ class CustomMainImage extends StatelessWidget {
 
         placeholder: (context, url) => Container(
           color: Colors.grey[100],
-          child: const Center(child: CircularProgressIndicator(
-            color: AppColors.greyText,
-          )),
+          child: const Center(
+            child: CircularProgressIndicator(color: AppColors.greyText),
+          ),
         ),
 
         errorWidget: (context, url, error) => Container(

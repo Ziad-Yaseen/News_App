@@ -21,4 +21,22 @@ class AppTextStyles {
     fontWeight: FontWeight.w500,
     color: AppColors.blueCancel,
   );
+
+  static TextStyle articleTitle = GoogleFonts.inter(
+    fontSize: AppSizes.fontSize18,
+    fontWeight: FontWeight.w600,
+    color: AppColors.primaryTextColor,
+  );
+
+  static TextStyle articleAuthorAndDate = GoogleFonts.inter(
+    fontSize: AppSizes.fontSize12,
+    fontWeight: FontWeight.w400,
+    color: AppColors.secondaryTextColor,
+  );
+
+  static TextStyle articleContent = GoogleFonts.merriweather(
+    fontSize: AppSizes.fontSize16,
+    fontWeight: FontWeight.w400,
+    color: AppColors.primaryTextColor,
+  );
 }
