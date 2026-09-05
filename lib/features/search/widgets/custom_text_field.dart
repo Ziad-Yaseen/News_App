@@ -5,19 +5,27 @@ import 'package:news_app/core/constants/app_sizes.dart';
 import 'package:news_app/core/styles/text_styles.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key});
+  const CustomTextField({
+    super.key,
+    required this.controller,
+    this.onSubmitted,
+  });
+
+  final TextEditingController controller;
+  final Function(String)? onSubmitted;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: TextField(
+        controller: controller,
+        onSubmitted: onSubmitted,
         scrollPhysics: const BouncingScrollPhysics(),
         onTapOutside: (event) {
           FocusManager.instance.primaryFocus?.unfocus();
         },
         autofocus: false,
         cursorColor: AppColors.blue,
-
         decoration: InputDecoration(
           prefixIcon: Icon(
             AppIcons.search,
@@ -35,14 +43,12 @@ class CustomTextField extends StatelessWidget {
             color: AppColors.grey,
             fontSize: AppSizes.fontSize17,
           ),
-          // contentPadding: const EdgeInsets.symmetric(vertical: 12),
           enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(color: AppColors.grey),
             borderRadius: BorderRadius.circular(AppSizes.radius8),
           ),
           filled: true,
           fillColor: AppColors.lightGreyFill,
-
           focusedBorder: OutlineInputBorder(
             borderSide: const BorderSide(color: AppColors.blue),
             borderRadius: BorderRadius.circular(AppSizes.radius8),

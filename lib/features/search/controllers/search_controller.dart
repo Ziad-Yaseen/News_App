@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:news_app/core/models/article_model.dart';
 import 'package:news_app/core/repositories/search_repository.dart';
 
-class SearchController extends ChangeNotifier {
+class MySearchController extends ChangeNotifier {
   final SearchRepository _searchRepository;
 
-  SearchController(this._searchRepository);
+  MySearchController(this._searchRepository);
 
   List<ArticleModel>? _articles;
   List<ArticleModel>? get articles => _articles;

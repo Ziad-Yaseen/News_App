@@ -47,6 +47,7 @@ class _HomeState extends State<Home> {
               Gap(AppSizes.height24),
               Expanded(
                 child: NewsContentView(
+                  isSearch: false,
                   isLoading: _controller.isLoading,
                   errorMessage: _controller.errorMessage,
                   articles: _controller.articles,

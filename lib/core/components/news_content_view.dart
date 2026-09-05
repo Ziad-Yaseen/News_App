@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/models/article_model.dart';
-import 'package:news_app/features/home/widgets/loading_widget.dart';
-import 'package:news_app/features/home/widgets/news_list_view.dart';
-import 'package:news_app/features/home/widgets/my_error_widget.dart';
+import 'package:news_app/core/components/loading_widget.dart';
+import 'package:news_app/core/components/news_list_view.dart';
+import 'package:news_app/core/components/my_error_widget.dart';
 
 class NewsContentView extends StatelessWidget {
   const NewsContentView({
@@ -11,12 +11,14 @@ class NewsContentView extends StatelessWidget {
     this.errorMessage,
     this.articles,
     required this.onRetry,
+    required this.isSearch
   });
 
   final bool isLoading;
   final String? errorMessage;
   final List<ArticleModel>? articles;
   final VoidCallback onRetry;
+  final bool isSearch;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class NewsContentView extends StatelessWidget {
         fetchNews: onRetry,
       );
     } else if (articles != null && articles!.isNotEmpty) {
-      sliverContent = NewsListView(articles: articles!);
+      sliverContent = NewsListView(articles: articles!, isSearch: isSearch,);
     } else {
       sliverContent = const SliverToBoxAdapter(child: SizedBox.shrink());
     }
