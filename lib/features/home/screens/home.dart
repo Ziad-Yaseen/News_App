@@ -6,7 +6,7 @@ import 'package:news_app/core/services/home_services.dart';
 import 'package:news_app/features/home/controllers/home_controller.dart';
 import 'package:news_app/features/home/widgets/categories_list_view.dart';
 import 'package:news_app/features/home/widgets/home_app_bar.dart';
-import 'package:news_app/features/home/widgets/news_content_view.dart';
+import 'package:news_app/core/components/news_content_view.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
