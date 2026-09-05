@@ -4,7 +4,7 @@ import 'package:news_app/core/services/search_services.dart';
 class SearchRepository {
   final SearchServices searchServices;
 
-  new(this.searchServices);
+  SearchRepository(this.searchServices);
 
   Future<List<ArticleModel>> fetchSearchResult(String search) async {
     try {
