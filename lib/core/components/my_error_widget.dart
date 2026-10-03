@@ -5,11 +5,11 @@ class MyErrorWidget extends StatelessWidget {
   const MyErrorWidget({
     super.key,
     required this.isNetworkError,
-    required this.fetchNews,
+    // required this.fetchNews,
   });
 
   final bool isNetworkError;
-  final VoidCallback fetchNews;
+  // final VoidCallback fetchNews;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,9 @@ class MyErrorWidget extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             ElevatedButton.icon(
-              onPressed: fetchNews,
+              onPressed: () {
+                // fetchNews();
+              },
               icon: const Icon(Icons.refresh),
               label: Text('try_again'.tr()),
               style: ElevatedButton.styleFrom(

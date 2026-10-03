@@ -64,20 +64,20 @@ class _SearchScreenState extends State<SearchScreen> {
                 ],
               ),
             ),
-            Expanded(
-              child: ListenableBuilder(
-                listenable: _controller,
-                builder: (context, _) {
-                  return NewsContentView(
-                    isSearch: true,
-                    isLoading: _controller.isLoading,
-                    errorMessage: _controller.errorMessage,
-                    articles: _controller.articles,
-                    onRetry: _controller.retrySearch,
-                  );
-                },
-              ),
-            ),
+            // Expanded(
+            //   child: ListenableBuilder(
+            //     listenable: _controller,
+            //     builder: (context, _) {
+            //       return NewsContentView(
+            //         isSearch: true,
+            //         isLoading: _controller.isLoading,
+            //         errorMessage: _controller.errorMessage,
+            //         articles: _controller.articles,
+            //         onRetry: _controller.retrySearch,
+            //       );
+            //     },
+            //   ),
+            // ),
           ],
         ),
       ),

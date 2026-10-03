@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news_app/core/models/article_model.dart';
 import 'package:news_app/core/routes/route_names.dart';
 import 'package:news_app/features/article_view/screens/article_view.dart';
+import 'package:news_app/features/home/cubit/home_cubit.dart';
 import 'package:news_app/features/home/screens/home.dart';
 import 'package:news_app/features/search/screens/search_screen.dart';
 
@@ -15,7 +17,7 @@ class AppRouter {
         name: RouteNames.home,
         pageBuilder: (context, state) => CustomTransitionPage(
           key: state.pageKey,
-          child: const Home(),
+          child: BlocProvider(create: (context) => HomeCubit(), child: const Home()),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(opacity: animation, child: child);
           },
