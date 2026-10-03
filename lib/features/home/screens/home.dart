@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gap/gap.dart';
 import 'package:news_app/core/components/loading_widget.dart';
 import 'package:news_app/core/components/my_error_widget.dart';
 import 'package:news_app/core/components/news_list_view.dart';
-import 'package:news_app/core/constants/app_sizes.dart';
 import 'package:news_app/core/models/article_model.dart';
 import 'package:news_app/features/home/cubit/home_cubit.dart';
 import 'package:news_app/features/home/cubit/home_states.dart';

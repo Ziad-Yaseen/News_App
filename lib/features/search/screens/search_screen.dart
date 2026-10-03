@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:news_app/core/components/news_content_view.dart';
 import 'package:news_app/core/constants/app_sizes.dart';
 import 'package:news_app/core/repositories/search_repository.dart';
 import 'package:news_app/core/services/search_services.dart';
